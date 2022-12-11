@@ -1,0 +1,9 @@
+## Interface: 30400
+## Title: |TInterface/Addons/ReubinsNameplates/media/icons/ReubinsNameplates_icon:16:16|t LockoutTracker
+## Notes: Marks locked dungeons and raids in the Group Finder.
+## Author: Reubin
+## Version: 1.0.0
+## DefaultState: enabled
+
+core.lua
+init.lua
