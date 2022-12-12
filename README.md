@@ -5,7 +5,7 @@ Lockout Tracker marks down dungeons and raids you got locked out of (or in other
 <br />
 Addon doesn't require anything.
 <br />
-Group Finder tool comes by default with the game and can be opened with hot key "i" (by default).
+Group Finder tool comes by default with the game and can be opened with the "i" hot key (by default).
 
 <br />
 
