@@ -9,4 +9,4 @@ Group Finder tool comes by default with the game and can be opened with the "i" 
 
 <br />
 
-<img width="600" alt="Screenshot 2022-12-12 022001 copy" src="https://user-images.githubusercontent.com/82573908/206935970-446d5b03-2190-498f-8a25-f1df1b44af4d.png">
+<img width="825" alt="Screenshot 2022-12-12 022001 copy" src="https://user-images.githubusercontent.com/82573908/206996120-94784e99-ebed-4908-9ba0-f73fde8fec94.jpg">
