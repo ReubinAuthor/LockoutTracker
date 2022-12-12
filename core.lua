@@ -5,7 +5,7 @@ local myAddon, core = ...
 
 core.func = {};
 core.data = {
-    saved = { dungeons = {}, raids_10 = {}, raids_25 = {} }
+    saved = { dungeons = {}, raids_10 = {}, raids_25 = {}, raids_40 = {} }
 };
 
 local func = core.func;
@@ -25,6 +25,8 @@ function func:CheckLocks()
                 data.saved.raids_10[name] = 1;
             elseif maxPlayers == 25 then
                 data.saved.raids_25[name] = 1;
+            else
+                data.saved.raids_40[name] = 1;
             end
         end
     end
@@ -53,7 +55,7 @@ function func:CheckLocks()
                         elseif string.match(activityGroupName, "25") and data.saved.raids_25[activityInfo.shortName] then
                             button.NameButton.Name:SetTextColor(1,0,0);
                         elseif not string.match(activityGroupName, "10") and not string.match(activityGroupName, "25")
-                        and (data.saved.raids_10[activityInfo.shortName] or data.saved.raids_25[activityInfo.shortName])
+                        and (data.saved.raids_10[activityInfo.shortName] or data.saved.raids_25[activityInfo.shortName] or data.saved.raids_40[activityInfo.shortName])
                         then
                             button.NameButton.Name:SetTextColor(1,0,0);
                         else
