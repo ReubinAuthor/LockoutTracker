@@ -17,6 +17,15 @@ function core:init(event, ...)
     then
         func:CheckLocks();
     end
+
+    --[[
+    if event == "BOSS_KILL"
+    or event == "INSTANCE_LOCK_START"
+    or event == "INSTANCE_LOCK_STOP"
+    then
+        print(event);
+    end
+    ]]
 end
 
 ----------------------------------------
@@ -28,6 +37,9 @@ local events = CreateFrame("Frame");
 events:RegisterEvent("PLAYER_ENTERING_WORLD");
 events:RegisterEvent("UPDATE_INSTANCE_INFO");
 events:RegisterEvent("LFG_LIST_AVAILABILITY_UPDATE");
+--events:RegisterEvent("BOSS_KILL");
+--events:RegisterEvent("INSTANCE_LOCK_START");
+--events:RegisterEvent("INSTANCE_LOCK_STOP");
 
 -- Scripts
 events:SetScript("OnEvent", core.init);
