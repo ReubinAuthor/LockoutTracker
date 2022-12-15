@@ -44,8 +44,10 @@ function func:CheckLocks()
                     local function matchDungeons()
                         for k,v in pairs(data.saved.dungeons) do
                             local LFGName = activityInfo.fullName;
-
-                            if string.match(string.lower(LFGName), string.lower(k)) or string.match(string.lower(k), string.lower(LFGName)) then
+                            --print(LFGName, "-VS-", k) -- debug
+                            if string.match(string.lower(LFGName), string.lower(k)) or string.match(string.lower(k), string.lower(LFGName))
+                            or string.lower(LFGName) == string.lower(k)
+                            then
                                 return true;
                             end
                         end
@@ -55,26 +57,23 @@ function func:CheckLocks()
                         if raids then
                             for k,v in pairs(data.saved[raids]) do
                                 local LFGName = activityInfo.fullName;
-
-                                if string.match(string.lower(LFGName), string.lower(k)) or string.match(string.lower(k), string.lower(LFGName)) then
+                                --print(LFGName, "-VS-", k) -- Debug
+                                if string.match(string.lower(LFGName), string.lower(k)) or string.match(string.lower(k), string.lower(LFGName))
+                                or string.lower(LFGName) == string.lower(k)
+                                then
                                     return true;
                                 end
                             end
                         end
                     end
 
-                    -- Dungeons
-                    if (activityInfo.groupFinderActivityGroupID == 289 or activityInfo.groupFinderActivityGroupID == 288) and matchDungeons() then
+                    if ( activityInfo.groupFinderActivityGroupID == 289 or activityInfo.groupFinderActivityGroupID == 288 ) and matchDungeons() then
                         button.NameButton.Name:SetTextColor(1,0,0);
-                    -- Wrath 10
-                    elseif activityInfo.groupFinderActivityGroupID == 292 and matchRaids("raids_10") then
+                    elseif activityInfo.groupFinderActivityGroupID == 292 and matchRaids("raids_10") then -- Wrath 10
                         button.NameButton.Name:SetTextColor(1,0,0);
-                    -- Wrath 25
-                    elseif activityInfo.groupFinderActivityGroupID == 293 and matchRaids("raids_25") then
+                    elseif activityInfo.groupFinderActivityGroupID == 293 and matchRaids("raids_25") then -- Wrath 25
                         button.NameButton.Name:SetTextColor(1,0,0);
-                    -- Rest
-                    elseif (activityInfo.groupFinderActivityGroupID == 290 or activityInfo.groupFinderActivityGroupID == 291)
-                        and (matchRaids("raids_10") or matchRaids("raids_25") or matchRaids("raids_xx"))
+                    elseif (activityInfo.groupFinderActivityGroupID == 290 or activityInfo.groupFinderActivityGroupID == 291) and (matchRaids("raids_10") or matchRaids("raids_25") or matchRaids("raids_xx")) -- Rest
                     then
                         button.NameButton.Name:SetTextColor(1,0,0);
                     else
